@@ -1,0 +1,49 @@
+
+(1) Assume that a block/tile dimension of 32x32 is used. What is the ratio of
+    floating point operations to bytes loaded from global memory performed by
+    each of the following kernels? Show your work.
+
+    (a) The kernel implemented in the previous assignment (without shared memory
+        tiling)
+
+
+
+
+
+    (b) The kernel implemented in this assignment (with shared memory tiling)
+
+
+
+
+
+(2) Assume that a block/tile size of 32x32 is used, and that the program runs
+    on a NVIDIA Tesla V100 GPU (the model on the HPC cluster) which has the
+    following resource constraints:
+        > 2048 max threads/SM
+        > 32 max blocks/SM
+        > 96KB max shared-memory/SM
+        > 64K max registers/SM
+    Note that you can extract the resource usage of your kernel, including
+    registers/thread and shared-memory/block using the folloing command:
+                nvcc -c --ptxas-options="-v" kernel.cu
+    Answer the following questions about occupancy for the kernel implemented
+    in this assignment. Show your work.
+
+    (a) Is occupancy limited by the max blocks/SM?
+
+
+
+
+
+    (b) Is occupancy limited by the max shared-memory/SM?
+
+
+
+
+
+    (c) Is occupancy limited by the max registers/SM?
+
+
+
+
+
