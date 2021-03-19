@@ -1,3 +1,16 @@
 
-*.o 
+# Binaries
+
+vecmax
+mm
+mm-tiled
+convolution
 reduction
+scan
+
+# .o files
+
+*.o
+
+
+
