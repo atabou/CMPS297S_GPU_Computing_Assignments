@@ -29,7 +29,9 @@ void histogram_cpu(unsigned char* image, unsigned int* bins, unsigned int width,
 void verify(unsigned int* bins_cpu, unsigned int* bins_gpu) {
     for (unsigned int b = 0; b < NUM_BINS; ++b) {
         if(bins_cpu[b] != bins_gpu[b]) {
+            printf("\033[0;31m");
             printf("Mismatch at bin %u (CPU result = %u, GPU result = %u)\n", b, bins_cpu[b], bins_gpu[b]);
+            printf("\033[0m");
             return;
         }
     }
