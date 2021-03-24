@@ -13,7 +13,6 @@ __global__ void histogram_private_kernel(unsigned char* image, unsigned int* bin
         histogram_s[threadIdx.x] = 0;
     }
 
-    // Do I need to include this syncthreads?
     __syncthreads();
 
     unsigned int i = blockIdx.x*blockDim.x + threadIdx.x;
@@ -55,7 +54,6 @@ __global__ void histogram_private_coarse_kernel(unsigned char* image, unsigned i
 
     unsigned int segment = COARSE_FACTOR*blockIdx.x*blockDim.x;
 
-    // IS MEMORY COALESCED IN THIS CASE?
     unsigned int threadSegment = threadIdx.x * COARSE_FACTOR;
     for( int i=0; i < COARSE_FACTOR && segment + threadSegment + i < width*height; i++) {
         unsigned char bin_pos = image[ segment + threadSegment + i  ];
